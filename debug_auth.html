@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Debug Authentication</title>
+</head>
+<body>
+    <h1>Authentication Debug Tool</h1>
+    <div id="results"></div>
+    
+    <script>
+        // Check localStorage for token
+        const token = localStorage.getItem('token');
+        const results = document.getElementById('results');
+        
+        results.innerHTML += `<p><strong>Token in localStorage:</strong> ${token ? 'Present' : 'Not found'}</p>`;
+        
+        if (token) {
+            results.innerHTML += `<p><strong>Token value:</strong> ${token}</p>`;
+            
+            // Try to decode the token (basic JWT decode)
+            try {
+                const payload = JSON.parse(atob(token.split('.')[1]));
+                results.innerHTML += `<p><strong>Token payload:</strong> ${JSON.stringify(payload, null, 2)}</p>`;
+                
+                // Check if token is expired
+                const now = Date.now() / 1000;
+                if (payload.exp < now) {
+                    results.innerHTML += `<p style="color: red;"><strong>Token is EXPIRED</strong></p>`;
+                } else {
+                    results.innerHTML += `<p style="color: green;"><strong>Token is VALID</strong></p>`;
+                }
+            } catch (e) {
+                results.innerHTML += `<p style="color: red;"><strong>Error decoding token:</strong> ${e.message}</p>`;
+            }
+            
+            // Test API call
+            fetch('http://localhost:5000/api/auth', {
+                headers: {
+                    'x-auth-token': token
+                }
+            })
+            .then(response => response.json())
+            .then(data => {
+                results.innerHTML += `<p><strong>API Response:</strong> ${JSON.stringify(data, null, 2)}</p>`;
+            })
+            .catch(error => {
+                results.innerHTML += `<p style="color: red;"><strong>API Error:</strong> ${error.message}</p>`;
+            });
+        } else {
+            results.innerHTML += `<p style="color: red;"><strong>No token found. User needs to log in.</strong></p>`;
+        }
+    </script>
+</body>
+</html>

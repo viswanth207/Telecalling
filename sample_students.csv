@@ -1,0 +1,11 @@
+name,email,phone,courseInterested,alternatePhone,source,status,city,state,parentName,parentPhone
+Rahul Sharma,rahul.sharma@email.com,9876543210,Computer Science Engineering,9876543211,website,new,Hyderabad,Telangana,Rajesh Sharma,9876543212
+Priya Patel,priya.patel@email.com,8765432109,Mechanical Engineering,8765432108,event,interested,Bangalore,Karnataka,Suresh Patel,8765432107
+Ankit Kumar,ankit.kumar@email.com,7654321098,Electronics and Communication,7654321097,referral,new,Chennai,Tamil Nadu,Vinod Kumar,7654321096
+Sneha Reddy,sneha.reddy@email.com,6543210987,Civil Engineering,,website,follow_up,Vijayawada,Andhra Pradesh,Ravi Reddy,6543210986
+Arun Singh,arun.singh@email.com,5432109876,Information Technology,5432109875,advertisement,new,Pune,Maharashtra,Mohan Singh,5432109874
+Kavya Nair,kavya.nair@email.com,4321098765,Biotechnology,,event,interested,Kochi,Kerala,Sunil Nair,4321098764
+Vikram Gupta,vikram.gupta@email.com,3210987654,Electrical Engineering,3210987653,website,new,Delhi,Delhi,Ashok Gupta,3210987652
+Pooja Joshi,pooja.joshi@email.com,2109876543,Chemical Engineering,,referral,not_interested,Mumbai,Maharashtra,Ramesh Joshi,2109876542
+Sachin Yadav,sachin.yadav@email.com,1098765432,Aerospace Engineering,1098765431,website,new,Lucknow,Uttar Pradesh,Dinesh Yadav,1098765430
+Meera Iyer,meera.iyer@email.com,9087654321,Computer Science Engineering,,event,admitted,Coimbatore,Tamil Nadu,Krishnan Iyer,9087654320
